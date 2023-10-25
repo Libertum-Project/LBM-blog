@@ -1,5 +1,5 @@
 {
-  "name": "libertum-blog",
+  "name": "test2",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,10 +11,10 @@
   "dependencies": {
     "react": "^18",
     "react-dom": "^18",
-    "next": "13.5.5"
+    "next": "13.5.6"
   },
   "devDependencies": {
     "eslint": "^8",
-    "eslint-config-next": "13.5.5"
+    "eslint-config-next": "13.5.6"
   }
 }

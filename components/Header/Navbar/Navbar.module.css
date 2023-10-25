@@ -1,0 +1,18 @@
+.mobileNav {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  height: 6rem;
+}
+
+.menu {
+  position: absolute;
+  top: 150px;
+  /* Ajusta la posición según tus necesidades */
+  left: 0;
+  background-color: #fff;
+  /* Cambia el color de fondo a tu preferencia */
+  border: 1px solid #ccc;
+  padding: 10px;
+}
