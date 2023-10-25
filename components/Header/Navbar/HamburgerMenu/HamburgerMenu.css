@@ -60,3 +60,10 @@
   transition-duration: .3s;
   transform-origin: left center;
 }
+
+@media (min-width: 850px) {
+
+  .hamburger--container {
+    display: none;
+  }
+}

@@ -1,18 +1,54 @@
-.mobileNav {
+.nav {
   align-items: center;
   display: flex;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 1rem .5rem;
   height: 6rem;
 }
 
-.menu {
-  position: absolute;
-  top: 150px;
-  /* Ajusta la posición según tus necesidades */
-  left: 0;
-  background-color: #fff;
-  /* Cambia el color de fondo a tu preferencia */
-  border: 1px solid #ccc;
-  padding: 10px;
+.desktopLink {
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  width: 35rem;
+  display: none;
+}
+
+.desktopLink a {
+  color: var(--black);
+  text-decoration: none;
+  transition: all ease-in .2s;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.desktopLink a:hover {
+  color: var(--orange);
+}
+
+
+@media (min-width: 850px) {
+  .nav {
+    padding: 1rem 4rem;
+  }
+
+  .desktopLink {
+    display: flex;
+  }
+}
+
+
+@media (min-width: 1250px) {
+  .nav {
+    padding: 1rem 11rem;
+  }
+
+  .nav img {
+    height: 80px;
+    width: 80px;
+  }
+
+  .desktopLink {
+    display: flex;
+  }
 }

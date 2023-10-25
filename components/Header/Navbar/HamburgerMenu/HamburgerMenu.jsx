@@ -8,7 +8,6 @@ const HamburgerMenu = ({ toggle }) => {
       if (checkbox) {
         checkbox.checked = !checkbox.checked;
         toggle();
-        console.log('hola');
       }
     }
   };
@@ -16,7 +15,7 @@ const HamburgerMenu = ({ toggle }) => {
   return (
     <div
       className="hamburger--container"
-      tabIndex="1"
+      tabIndex="0"
       onKeyDown={handleToggle}
       onClick={handleToggle}
     >

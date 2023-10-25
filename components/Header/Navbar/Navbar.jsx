@@ -6,7 +6,7 @@ import css from './Navbar.module.css';
 const Navbar = ({ toggle }) => {
   return (
     <>
-      <nav className={css.mobileNav}>
+      <nav className={css.nav}>
         <HamburgerMenu toggle={toggle} />
         <Link href="/">
           <Image
@@ -16,6 +16,12 @@ const Navbar = ({ toggle }) => {
             height={64}
           />
         </Link>
+
+        <div className={css.desktopLink}>
+          <Link href="/">MARKETPLACE</Link>
+          <Link href="/">BUY LIBERTUM</Link>
+          <Link href="/">SUPPORT</Link>
+        </div>
       </nav>
     </>
   );
