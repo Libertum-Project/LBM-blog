@@ -35,3 +35,9 @@
   background-color: hsl(220, 16%, 96%);
   color: black;
 }
+
+@media (min-width: 850px) {
+  .mobileMenuContainer, .mobileMenu {
+    display: none !important;
+  }
+}
