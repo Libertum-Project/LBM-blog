@@ -1,0 +1,215 @@
+.heroContainer {
+  position: relative;
+  padding-top: 5rem;
+  overflow: hidden;
+}
+.video {
+  position: absolute;
+  /* right: -65rem; */
+  top: 0;
+  z-index: 9;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.backgroundNoVideo{
+  position: absolute;
+  /* right: -65rem; */
+  top: 0;
+  z-index: 9;
+  min-width: 100%;
+  min-height: 100%;
+  background: radial-gradient(80.5% 80.5% at 50% 103.87%, #000041 0%, #0E0E1E 100%);
+  background-blend-mode: multiply;
+}
+
+.hero {
+  padding: 6rem 0;
+  max-width: 75.125rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: self-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 3rem;
+  position: relative;
+  z-index: 99;
+  box-sizing: border-box;
+}
+.hero .text {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 3rem;
+  align-self: flex-start;
+  max-width: 44.375rem;
+  box-sizing: border-box;
+  /* margin: 0 auto; */
+}
+.hero h1 {
+  color: var(--color-quaternary);
+  font-family: var(--font-primary);
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 61.25px;
+  letter-spacing: -0.96px;
+  margin: 0;
+}
+.hero .paragraphs {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+.hero .paragraphs p {
+  color: var(--color-quaternary);
+  font-family: var(--font-secondary);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 24px */
+  align-self: stretch;
+  margin: 0;
+}
+.buttons {
+  display: flex;
+  width: 750px;
+  /* width: 100%; */
+  align-items: flex-start;
+  gap: 32px;
+}
+.button {
+  display: flex;
+  width: 182px;
+  padding: 8px 16px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  border: 1px solid var(--color-secondary);
+  background: rgba(0, 179, 181, 0.3);
+  backdrop-filter: blur(5px);
+  color: var(--color-quaternary);
+  text-align: center;
+  font-family: var(--font-primary);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+  cursor: pointer;
+  flex: 1 0 0;
+}
+.buttons a {
+  text-decoration: none;
+}
+/* .button:hover{
+  display: flex;
+  width: 182px;
+  padding: 8px 16px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  border: 1px solid var(--color-secondary);
+  background: rgba(255, 255, 255, 0.01);
+  backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  color: var(--color-quaternary);
+  text-align: center;
+  font-family: var(--font-primary);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+  cursor: pointer;    
+  flex: 1 0 0;
+} */
+.button1:hover {
+  display: flex;
+  width: 182px;
+  padding: 8px 16px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  border: 1px solid var(--color-secondary);
+  background: rgba(0, 179, 181, 0.3);
+  backdrop-filter: blur(5px);
+  color: var(--color-quaternary);
+  text-align: center;
+  font-family: var(--font-primary);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+  cursor: pointer;
+  flex: 1 0 0;
+}
+
+.button1 {
+  display: flex;
+  width: 182px;
+  padding: 8px 16px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  border: 1px solid var(--color-secondary);
+  background: rgba(255, 255, 255, 0.01);
+  backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  color: var(--color-quaternary);
+  text-align: center;
+  font-family: var(--font-primary);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+  cursor: pointer;
+  flex: 1 0 0;
+}
+
+.buttonFrame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+/* @media (min-width: 1250px) {
+  .hero {
+    flex-direction: row;
+    padding-top: 4.3125rem;
+    padding-inline: 0;
+  }
+  .video {
+    right: 0;
+  }
+} */
+@media screen and (max-width: 790px) {
+  .hero {
+    padding: 3rem 1rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .buttons a {
+    width: stretch;
+    text-decoration: none;
+  }
+  .buttons a:hover {
+    width: stretch;
+    text-decoration: none;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .hero {
+    padding-inline: 1rem;
+  }
+
+  .hero h1 {
+    font-weight: 700;
+  }
+}
