@@ -9,42 +9,42 @@ const Footer = () => {
   const navigation = [
     {
       name: "Property Owners",
-      href: "/propertyowners",
+      href: "https://www.libertum.io/propertyowners",
       section: "Navigation",
     },
     {
       name: "Investors",
-      href: "/learn-investors",
+      href: "https://www.libertum.io/learn-investors",
       section: "Navigation",
     },
     {
       name: "Explore Properties",
-      href: "/comingsoon",
+      href: "https://www.libertum.io/comingsoon",
       section: "Navigation",
     },
     {
       name: "Token",
-      href: "/ico",
+      href: "https://www.libertum.io/ico",
       section: "Navigation",
     },
     {
       name: "Privacy Policy",
-      href: "/comingsoonn",
+      href: "https://www.libertum.io/comingsoonn",
       section: "Support",
     },
     {
       name: "Terms & Conditions",
-      href: "/comingsoon",
+      href: "https://www.libertum.io/comingsoon",
       section: "Support",
     },
     {
       name: "Docs",
-      href: "/",
+      href: "https://www.libertum.io/",
       section: "Support",
     },
     {
       name: "Community",
-      href: "/community",
+      href: "https://www.libertum.io/community",
       section: "Support",
     },
   ];

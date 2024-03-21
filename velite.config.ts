@@ -21,9 +21,11 @@ const posts = defineCollection({
       published: s.boolean().default(true),
       tags: s.array(s.string()).optional(),
       body: s.mdx(),
+      cover: s.image(),
     })
     .transform(computedFields),
 });
+
 
 export default defineConfig({
   root: "content",

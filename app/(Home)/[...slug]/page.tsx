@@ -73,8 +73,8 @@ export default async function PostPage({ params }: PostPageProps) {
 
   return (    
     <article className="container py-6 prose max-w-3xl mx-auto md:max-w-[75rem] pt-32 pb-12 md:justify-between gap-20">
-       <div className="hidden md:block absolute inset-0 bg-gradient-to-b from-[#0E0E1E] to-[#000041]" style={{ height: '17rem', zIndex: '-1' }} /> 
-          <h1 className="mb-4 md:text-white font-space_grotesk font-bold">{post.title}</h1>
+       <div className="hidden md:block absolute inset-0 bg-gradient-to-b from-[#0E0E1E] to-[#000041]" style={{ height: '5rem', zIndex: '-1' }} /> 
+          <h1 className="mb-4 text-[#0E0E1E] font-space_grotesk font-bold">{post.title}</h1>
         <div className="flex gap-2 mb-2">
             {post.tags?.map((tag) => (
             <Tag tag={tag} key={tag} />
@@ -82,7 +82,7 @@ export default async function PostPage({ params }: PostPageProps) {
         </div>
 
       {post.description ? (
-        <p className="text-xl mt-0 md:mt-10 text-muted-foreground md:text-white">{post.description}</p>
+        <p className="text-xl mt-0 md:mt-10 text-muted-foreground text-[#0E0E1E]">{post.description}</p>
       ) : null}
       <hr className="my-4" />
       <MDXContent code={post.body} />

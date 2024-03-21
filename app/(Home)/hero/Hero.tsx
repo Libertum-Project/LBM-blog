@@ -39,15 +39,15 @@ export function Hero(): ReactElement {
             <br />
             Libertum
             <br />
-            Blog
+            <span className="text-orange-400 tracking-wide animate-pulse">Blog</span>
           </h1>
 
           <div className={css.paragraphs}>
             <p>
-              Libertum is more than an investment platform; it is a catalyst for
-              positive change in the world of real estate finance. We connect
-              Real Estate Owners and millions of Investors across the globe,
-              collaborating to unlock the true value of real estate.
+            Libertum is more than just an investment platform. It is a catalyst for positive change in real estate finance. Here, you will find the latest updates and innovations in the world of real estate investment.
+            </p>
+            <p>
+            Join us at Libertum Blog and stay informed about the latest developments in real estate finance!
             </p>
           </div>
         </article>
