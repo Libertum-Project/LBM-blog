@@ -1,8 +1,8 @@
-import { Hero } from "./hero/Hero";
 import { posts } from "#site/content";
 import { PostItem } from "@/components/post-item";
 import { slug } from "github-slugger";
 import { sortPosts } from "@/lib/utils";
+import Hero from "./hero/Hero";
 
 const Home = () => {
   const sortedPosts = sortPosts(posts.filter((post) => post.published));
