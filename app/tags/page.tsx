@@ -1,45 +1,66 @@
-import { getAllTags, sortTagsByCount } from "@/lib/utils";
-import { Metadata } from "next";
-import { posts } from "#site/content";
-import { Tag } from "@/components/tag";
-import { useRouter } from 'next/router';
+import { getAllTags, sortTagsByCount } from '@/lib/utils';
+import { Metadata } from 'next';
+import { posts } from '#site/content';
+import { Tag } from '@/components/tag';
+import { sortPosts } from '@/lib/utils';
+import { PostItem } from '@/components/post-item';
 
 export const metadata: Metadata = {
-  title: "Tags",
+  title: 'Tags',
   description: "Topic I've written about",
 };
 
 export default async function TagsPage() {
-  const router = useRouter();
   const tags = getAllTags(posts);
   const sortedTags = sortTagsByCount(tags);
-
-const handleTagClick = (tag: string) => { 
-  router.push(`/tags/${tag}`); 
-};
-
-const handleClearFilter = () => {
-  router.push('/tags');
-};
+  const sortedPosts = sortPosts(posts.filter((post) => post.published));
+  const displayPosts = sortedPosts;
 
   return (
-<div className="container max-w-4xl py-6 lg:py-10">
+    <div className="container max-[75rem] py-6 md:py-24">
+      <div
+        className="hidden md:block absolute inset-0 bg-gradient-to-b from-[#0E0E1E] to-[#000041]"
+        style={{ height: '6rem', zIndex: '-1' }}
+      />
       <div className="flex flex-col items-start gap-4 md:flex-row md:justify-between md:gap-8">
         <div className="flex-1 space-y-4">
-          <h1 className="inline-block font-black text-4xl lg:text-5xl">Tags</h1>
+          <h1 className="inline-block font-bold font-space_grotesk text-4xl lg:text-5xl capitalize">
+            All posts
+          </h1>
         </div>
       </div>
-      <hr className="my-4" />
+
       <div className="flex flex-wrap gap-2">
         {sortedTags?.map((tag) => (
-          <Tag
-            tag={tag}
-            count={tags[tag]}
-            key={tag}
-            current={tag === router.query.tag}
-            onClick={() => handleTagClick(tag)}
-          />
+          <Tag tag={tag} count={tags[tag]} key={tag} />
         ))}
+      </div>
+      <hr className="my-4" />
+
+      <div>
+        {displayPosts?.length > 0 ? (
+          <ul className="grid grid-cols-1 md:grid-cols-3">
+            {displayPosts.map((post) => {
+              const { slug, date, title, description, cover, tags } = post;
+              console.log('cover', cover);
+
+              return (
+                <li key={slug} className="p-3">
+                  <PostItem
+                    slug={slug}
+                    date={date}
+                    title={title}
+                    description={description}
+                    cover={cover}
+                    tags={tags}
+                  />
+                </li>
+              );
+            })}
+          </ul>
+        ) : (
+          <p>NADA QUE VER</p>
+        )}
       </div>
     </div>
   );

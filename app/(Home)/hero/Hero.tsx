@@ -17,8 +17,7 @@ const Hero = () => {
           <div className={css.paragraphsCommunity}>
             <p>
               Discover a world of opportunities in real estate finance with
-              Libertum. We are more than just an investment platform; we are
-              committed to driving positive change in the industry. Here, you
+              Libertum. Here, you
               will stay updated with the latest trends, innovations, and
               developments shaping the real estate investment landscape.
             </p>
