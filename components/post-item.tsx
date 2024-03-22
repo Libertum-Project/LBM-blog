@@ -22,7 +22,6 @@ export function PostItem({
   tags,
   cover,
 }: PostItemProps) {
-  console.log('TAGS' + tags);
   return (
     <article className="bg-white h-full rounded-[5px] shadow border border-black border-opacity-10 flex flex-col items-stretch justify-between space-y-2">
       <div className="p-0 relative">
@@ -65,7 +64,7 @@ export function PostItem({
           </dl>
         </div>
         <Link
-          href={slug}
+          href={"/" + slug}
           className="flex items-center justify-center w-full rounded-[5px] border border-teal-500 border-opacity-20  text-center font-semibold font-space_grotesk py-3 hover:bg-teal-500 hover:text-white bg-[#00062F] text-white space-x-4"
         >
           <p>Read more</p>
