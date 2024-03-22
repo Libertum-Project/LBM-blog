@@ -93,7 +93,7 @@ export default async function PostPage({ params }: PostPageProps) {
             <Tag tag={tag} key={tag} />
           ))}
         </div>
-        <Share description={'this is a basic share page'} />
+        <Share title={post.title} url={`https://blog.libertum.io/${post.slug}`} />
       </div>
       <hr className="my-4" />
       <div className="px-[3rem]">

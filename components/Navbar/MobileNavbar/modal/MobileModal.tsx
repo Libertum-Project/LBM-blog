@@ -18,6 +18,9 @@ export function MobileModal({
         <Link href="https://www.libertum.io/comingsoon" className={css.border}>
           Explore Properties
         </Link>
+        <Link href="/" className={css.border}>
+          Blog
+        </Link>
         <div className={css.border}>
           <p>Learn</p>
           <Link href="https://www.libertum.io/learn-investors">→ Investors</Link>

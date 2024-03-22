@@ -53,6 +53,13 @@ export function DesktopNavbar(): ReactElement {
           >
             Explore Properties
           </a>
+          <Link
+            href="/"
+            onMouseEnter={handleHideModals}
+            onTouchStart={handleHideModals}
+          >
+            Blog
+          </Link>
           <a
             href="https://www.libertum.io/comingsoon"
             onMouseEnter={handleShowLearnModal}
