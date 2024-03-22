@@ -17,7 +17,7 @@ export default async function TagsPage() {
   const displayPosts = sortedPosts;
 
   return (
-    <div className="container max-[75rem] py-6 md:py-24">
+    <div className="container md:max-[75rem] mx-auto pt-36">
       <div
         className="hidden md:block absolute inset-0 bg-gradient-to-b from-[#0E0E1E] to-[#000041]"
         style={{ height: '6rem', zIndex: '-1' }}
