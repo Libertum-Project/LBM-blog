@@ -15,7 +15,7 @@ const Home = () => {
   return (
     <>
       <Hero />
-      <div className="py-8 md:max-w-[75rem] mx-auto md:mx-auto">
+      <div className="pb-8 md:max-w-[75rem] mx-auto md:mx-auto">
         <div className="grid grid-cols-12 gap-3 mt-8"></div>
         {displayPosts?.length > 0 ? (
           <ul className="grid grid-cols-1 md:grid-cols-3">
