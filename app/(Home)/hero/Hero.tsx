@@ -1,118 +1,63 @@
-'use client'
-import { type ReactElement, useState, useEffect } from "react";
-import Image from "next/image";
-import css from "./Hero.module.css";
-import Link from "next/link";
+import Link from 'next/link';
+import css from './Hero.module.css';
+import Image from 'next/image';
 
-export function Hero(): ReactElement {
-  const [isMobile, setIsMobile] = useState(false);
-  
-  useEffect(() => {
-  const mediaQuery = window.matchMedia("(max-width: 950px)");
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 1250);
-      setIsMobile(mediaQuery.matches);
-    };
-    if (typeof window !== "undefined") {
-      window.addEventListener("resize", handleResize);
-      handleResize();
-
-      return () => {
-        window.removeEventListener("resize", handleResize);
-      };
-    }
-  }, []);
-
-
+const Hero = () => {
   return (
     <div className={css.heroContainer}>
-      <div>
-        {isMobile ? <div className={css.backgroundNoVideo}></div> : <video autoPlay muted loop className={css.video}>
-            <source src="./bg-video-1.mp4" type="video/mp4" />
-          </video> }
+      <div className="max-sm:hidden">
+        <video autoPlay muted loop className={css.video}>
+          <source src="./bg-video-1.mp4" type="video/mp4" />
+        </video>
       </div>
-        
-      <section className={css.hero}>
-        <article className={css.text}>
-          <h1>
-            Welcome to
-            <br />
-            Libertum
-            <br />
-            <span className="text-orange-400 tracking-wide animate-pulse">Blog</span>
-          </h1>
 
-          <div className={css.paragraphs}>
+      <div className={`${css.heroCommunity} max-sm:bg-primary-gradient`}>
+        <div className={css.textCommunity}>
+          <h1>Your Source for Real Estate Finance Insights</h1>
+          <div className={css.paragraphsCommunity}>
             <p>
-            Libertum is more than just an investment platform. It is a catalyst for positive change in real estate finance. Here, you will find the latest updates and innovations in the world of real estate investment.
+              Discover a world of opportunities in real estate finance with
+              Libertum. We are more than just an investment platform; we are
+              committed to driving positive change in the industry. Here, you
+              will stay updated with the latest trends, innovations, and
+              developments shaping the real estate investment landscape.
             </p>
             <p>
-            Join us at Libertum Blog and stay informed about the latest developments in real estate finance!
+              Join us at Libertum Blog and stay informed about the latest
+              developments in real estate finance!
             </p>
           </div>
-        </article>
-        {/* <div className={css.buttons}>
-          <Link href="/subscribe" className={css.button1}>
-            <div className={css.buttonFrame}>
-              <Image
-                src="/assets/rocket.svg"
-                alt="N"
-                width="13"
-                height="13"
-                className={css.logo}
-              />
-              <p>Start Tokenizing</p>
+        </div>
+
+        <div className={css.textCommunity}>
+          <h1>
+            Libertum
+            <span className="text-orange-400 tracking-wide animate-pulse">
+              Blog
+            </span>
+          </h1>
+          {/* <Image
+            src="/assets/photoMarket.png"
+            alt="N"
+            width={336}
+            height={336}
+            className="cover mr-[-2rem] z-10"
+          /> */}
+
+          {/* <div className="pl-10 pr-4 py-4 bg-white bg-opacity-5 rounded-xl border border-l-0 rounded-l-none border-teal-500">
+            <div className={css.featuredProperties__title}>
+              <span>New</span>
+              <p>Featured Properties</p>
             </div>
 
-            <Image
-              alt="left arrow"
-              src="/assets/leftArrow.svg"
-              width={13.207}
-              height={8.708}
-            />
-          </Link>
-
-          <Link href="/subscribe" className={css.button1}>
-            <div className={css.buttonFrame}>
-              <Image
-                src="/assets/marketIcon.svg"
-                alt="N"
-                width="13"
-                height="13"
-                className={css.logo}
-              />
-              <p>Explore Properties</p>
-            </div>
-
-            <Image
-              alt="left arrow"
-              src="/assets/leftArrow.svg"
-              width={13.207}
-              height={8.708}
-            />
-          </Link>
-
-          <Link href="/ico" className={css.button}>
-            <div className={css.buttonFrame}>
-              <Image
-                src="/assets/coin.svg"
-                alt="N"
-                width="13"
-                height="13"
-                className={css.logo}
-              />
-              <p>Buy LBM</p>
-            </div>
-
-            <Image
-              alt="left arrow"
-              src="/assets/leftArrow.svg"
-              width={13.207}
-              height={8.708}
-            />
-          </Link>
-        </div> */}
-      </section>
+            <Link href="/" className={css.featuredProperties__button}>
+              See all featured
+            </Link>
+          </div> */}
+        </div>
+      </div>
     </div>
   );
-}
+};
+
+export default Hero;
