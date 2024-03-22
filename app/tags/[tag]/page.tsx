@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { getAllTags, getPostsByTagSlug, sortTagsByCount } from '@/lib/utils';
 import { slug } from 'github-slugger';
 import { Metadata } from 'next';
-import Link from 'next/link'; 
+import Link from 'next/link';
 
 interface TagPageProps {
   params: {
@@ -29,18 +29,16 @@ export const generateStaticParams = () => {
   return paths;
 };
 
-
 export default function TagPage({ params }: TagPageProps) {
   const { tag } = params;
   const title = tag.split('-').join(' ');
-
 
   const displayPosts = getPostsByTagSlug(posts, tag);
   const tags = getAllTags(posts);
   const sortedTags = sortTagsByCount(tags);
 
   return (
-    <div className="container max-w-4xl py-6 md:py-24">
+    <div className="container max-[75rem] py-6 md:py-24">
       <div
         className="hidden md:block absolute inset-0 bg-gradient-to-b from-[#0E0E1E] to-[#000041]"
         style={{ height: '6rem', zIndex: '-1' }}
@@ -52,47 +50,44 @@ export default function TagPage({ params }: TagPageProps) {
           </h1>
         </div>
       </div>
-      <div className="grid grid-cols-12 gap-3 mt-8">
-        <div className="col-span-12 col-start-1 sm:col-span-8">
-          <hr />
-          {displayPosts?.length > 0 ? (
-            <ul className="flex flex-col">
-              {displayPosts.map((post) => {
-                const { slug, date, title, description, tags, cover } = post;
-                return (
-                  <li key={slug} className="max-w-[25rem] mb-3 mx-auto">
-                    <PostItem
-                      slug={slug}
-                      date={date}
-                      title={title}
-                      description={description}
-                      tags={tags}
-                      cover={cover}
-                    />
-                  </li>
-                );
-              })}
-            </ul>
-          ) : (
-            <p>Nothing to see here yet</p>
-          )}
-        </div>
-        <Card className="col-span-12 row-start-3 h-fit sm:col-span-4 sm:col-start-9 sm:row-start-1">
-          <CardHeader>
-            <CardTitle>Tags</CardTitle>
-          </CardHeader>
-          <CardContent className="flex flex-wrap gap-2">
-            <div>
-            <Link href="/" className="no-underline rounded-[25px] text-white bg-teal-500 hover:bg-white hover:text-[#0E0E1E] font-space_grotesk px-3">
-            All
-            </Link>
-            {sortedTags?.map((t) => (
-              <Tag tag={t} key={t} count={tags[t]} current={slug(t) === tag} />
-            ))}
-            </div>
+      <div className="flex flex-wrap gap-2">
+        <Link href="/tags" className='no-underline rounded-[15px] px-3 text-white bg-teal-500 hover:bg-white hover:text-[#0E0E1E] font-space_grotesk uppercase'>
+          All
+        </Link>
+        {sortedTags?.map((tag) => (
+          <Tag tag={tag} count={tags[tag]} key={tag} />
+        ))}
+      </div>
+      <hr className="my-4" />
 
-          </CardContent>
-        </Card>
+      <div className="grid grid-cols-1 md:col-3 gap-3 mt-8">
+        <div className="col-span-12 col-start-1 sm:col-span-8">
+          <div>
+            {displayPosts?.length > 0 ? (
+              <ul className="grid grid-cols-1 md:grid-cols-3">
+                {displayPosts.map((post) => {
+                  const { slug, date, title, description, cover, tags } = post;
+                  console.log('cover', cover);
+
+                  return (
+                    <li key={slug} className="p-3">
+                      <PostItem
+                        slug={slug}
+                        date={date}
+                        title={title}
+                        description={description}
+                        cover={cover}
+                        tags={tags}
+                      />
+                    </li>
+                  );
+                })}
+              </ul>
+            ) : (
+              <p>There is nothing to show</p>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );

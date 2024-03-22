@@ -40,9 +40,9 @@ const Home = () => {
         ) : (
           <p>NADA QUE VER</p>
         )}
-        {sortedTags?.map((tag) => (
+        {/* {sortedTags?.map((tag) => (
           <Tag tag={tag} key={tag} count={tags[tag]} />
-        ))}
+        ))} */}
       </div>
     </>
   );

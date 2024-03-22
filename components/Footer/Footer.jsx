@@ -76,12 +76,12 @@ const Footer = () => {
                 className={css.logo}
               />
             </Link>
-            <p className={css.firstColInformation}>
+            {/* <p className={css.firstColInformation}>
               15 Crammavill Street<br />
               Grays <br />
               England <br />
               RM16 2AP
-            </p>
+            </p> */}
             <a href="mailto:hello@libertum.io" className={css.firstColContact}>hello@libertum.io</a>
             <p className={css.firstColContact}>14638562</p>
             <div>
