@@ -4,6 +4,7 @@ import Image from "next/image";
 import SocialMedia from "./SocialMedia";
 import css from "./Footer.module.css";
 import background from "./background.svg";
+import { ServerImage } from "../ServerImage";
 
 const Footer = () => {
   const navigation = [
@@ -58,7 +59,7 @@ const Footer = () => {
 
   return (
     <footer className={css.footer}>
-      <Image
+      <ServerImage
         src="./background.svg"
         alt="N"
         width="1812"
