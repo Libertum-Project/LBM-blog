@@ -38,6 +38,6 @@
   @apply no-underline hover:underline font-space_grotesk font-semibold;
 }
 
- p {
+ p, li {
  @apply font-ubuntu text-base
 }
