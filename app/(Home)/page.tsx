@@ -38,7 +38,7 @@ const Home = () => {
             })}
           </ul>
         ) : (
-          <p>NADA QUE VER</p>
+          <p>NO posts</p>
         )}
         {/* {sortedTags?.map((tag) => (
           <Tag tag={tag} key={tag} count={tags[tag]} />
