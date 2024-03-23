@@ -43,8 +43,8 @@ export function PostItem({
             <h2 className="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
               <Link href={'/' + slug}>{title}</Link>
             </h2>
-            <div className="text-white text-sm  hover:text-blue-900 transition duration-500 ease-in-out gap-2">
-          {tags?.map((tag) => (
+            <div className="text-white text-sm  hover:text-blue-900 transition duration-500 ease-in-out">
+          {tags?.map((tag, index) => (           
             <Tag tag={tag} key={tag} />
           ))}
         </div>
