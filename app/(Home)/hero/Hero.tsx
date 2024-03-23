@@ -7,7 +7,7 @@ const Hero = () => {
     <div className={css.heroContainer}>
       <div className="max-sm:hidden">
         <video autoPlay muted loop className={css.video}>
-          <source src="./bg-video-1.mp4" type="video/mp4" />
+          <source src="/bg-video-1.mp4" type="video/mp4" />
         </video>
       </div>
 

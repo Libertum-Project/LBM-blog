@@ -60,7 +60,7 @@ const Footer = () => {
   return (
     <footer className={css.footer}>
       <ServerImage
-        src="./background.svg"
+        src="/background.svg"
         alt="N"
         width="1812"
         height="460"

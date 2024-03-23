@@ -79,7 +79,7 @@ export default async function PostPage({ params }: PostPageProps) {
         style={{ height: '6rem', zIndex: '-1' }}
       />
 
-      <div className="sticky top-0 bg-[#ffffff68] backdrop-blur-sm py-3 px-[3rem]">
+      <div className="md:sticky md:top-0 bg-[#ffffff68] backdrop-blur-sm py-3 px-[3rem]">
         <h1 className="mb-4 text-[#0E0E1E] font-space_grotesk font-bold">
           {post.title}
         </h1>
