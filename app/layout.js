@@ -1,11 +1,12 @@
 import { Montserrat } from 'next/font/google';
 import './globals.css';
 const montserrat = Montserrat({ subsets: ['latin'] });
+import { siteConfig } from '@/config/site';
 
 export const metadata = {
-  title: 'Libertum - Blog',
-  description:
-    'Exploring freedom, technology, and innovation in our journey to a brighter future.',
+  title: siteConfig.name,
+  description: siteConfig.description,
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? siteConfig.url),
 };
 
 export default function RootLayout({ children }) {
