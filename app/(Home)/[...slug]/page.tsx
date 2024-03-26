@@ -43,7 +43,7 @@ export async function generateMetadata({
       url: post.slug,
       images: [
         {
-          url: `https://blog.libertum.io/api/og?${ogSearchParams.toString()}`,
+          url: 'https://blog.libertum.io/_next/image?url=%2Fstatic%2FTakeControl-74d6e3.png&w=640&q=75',
           width: 1200,
           height: 630,
           alt: post.title,
