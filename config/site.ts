@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: "Libertum Blog",
-  url: "Libertum.io",
+  url: "http://blog.libertum.io",
   description: "Latest developments in real estate finance",
   author: "Libertum",
   links: {

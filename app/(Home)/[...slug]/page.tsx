@@ -43,7 +43,7 @@ export async function generateMetadata({
       url: post.slug,
       images: [
         {
-          url: 'https://blog.libertum.io/_next/image?url=%2Fstatic%2FTakeControl-74d6e3.png&w=640&q=75',
+          url: `/api/og?${ogSearchParams.toString()}`,
           width: 1200,
           height: 630,
           alt: post.title,
@@ -55,14 +55,7 @@ export async function generateMetadata({
       creator: 'libertum',
       title: post.title,
       description: post.description,
-      images: [
-        {
-          url: 'https://blog.libertum.io/_next/image?url=%2Fstatic%2FTakeControl-74d6e3.png&w=640&q=75',
-          width: 1200,
-          height: 630,
-          alt: post.title,
-        },
-      ]
+      images: [`/api/og?${ogSearchParams.toString()}`],
     },
   };
 }
