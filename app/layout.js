@@ -6,7 +6,7 @@ import { siteConfig } from '@/config/site';
 export const metadata = {
   title: siteConfig.name,
   description: siteConfig.description,
-  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? siteConfig.url),
+  metadataBase: new URL(siteConfig.url),
 };
 
 export default function RootLayout({ children }) {
