@@ -52,6 +52,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: 'summary_large_image',
+      creator: 'libertum',
       title: post.title,
       description: post.description,
       images: [`/api/og?${ogSearchParams.toString()}`],
@@ -93,7 +94,10 @@ export default async function PostPage({ params }: PostPageProps) {
             <Tag tag={tag} key={tag} />
           ))}
         </div>
-        <Share title={post.title} url={`https://blog.libertum.io/${post.slug}`} />
+        <Share
+          title={post.title}
+          url={`https://blog.libertum.io/${post.slug}`}
+        />
       </div>
       <hr className="my-4" />
       <div className="md:px-[3rem]">
