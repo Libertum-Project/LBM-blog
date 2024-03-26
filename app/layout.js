@@ -6,7 +6,12 @@ import { siteConfig } from '@/config/site';
 export const metadata = {
   title: siteConfig.name,
   description: siteConfig.description,
-  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? siteConfig.url),
+  metadataBase: new URL(siteConfig.url),
+  twitter: {
+    siteId: '1467726470533754880',
+    creatorId: '1467726470533754880',
+  },
+  whatsApp
 };
 
 export default function RootLayout({ children }) {
