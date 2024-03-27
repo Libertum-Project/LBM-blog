@@ -38,7 +38,7 @@ export default function TagPage({ params }: TagPageProps) {
   const sortedTags = sortTagsByCount(tags);
 
   return (
-    <div className="container max-[75rem] py-6 md:py-24">
+    <div className="container max-[75rem] pt-24 pb-6 md:py-24">
       <div
         className="hidden md:block absolute inset-0 bg-gradient-to-b from-[#0E0E1E] to-[#000041]"
         style={{ height: '6rem', zIndex: '-1' }}
@@ -51,8 +51,13 @@ export default function TagPage({ params }: TagPageProps) {
         </div>
       </div>
       <div className="flex flex-wrap gap-2">
-        <Link href="/tags" className='no-underline rounded-[15px] px-3 text-white bg-teal-500 hover:bg-white hover:text-[#0E0E1E] font-space_grotesk uppercase'>
-          All
+      <Link
+          href="/tags"
+          className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 m-[.8px] border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 no-underline p-4 text-white bg-teal-500 border-teal-500 hover:text-teal-500 font-space_grotesk hover:scale-105 uppercase max-h-6"
+        >
+          <p className="font-space_grotesk text-xs font-semibold hover:scale-105 uppercase">            
+            All
+          </p>
         </Link>
         {sortedTags?.map((tag) => (
           <Tag tag={tag} count={tags[tag]} key={tag} />
