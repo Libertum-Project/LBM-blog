@@ -10,8 +10,6 @@ export const runtime = 'edge';
 
 export async function GET(req: NextRequest) {
   try {
-    // const fontBold = await spaceGrotesk;
-
     const { searchParams } = req.nextUrl;
     const title = searchParams.get('title');
 
@@ -24,24 +22,16 @@ export async function GET(req: NextRequest) {
 
     return new ImageResponse(
       (
-        <div tw="flex relative flex-col p-12 w-full h-full items-start text-black bg-[#00062F] text-white">
+        <div
+          tw="flex relative flex-col p-26 w-full h-full items-start text-black text-white"
+          style={{
+            backgroundImage: 'linear-gradient(to bottom, #0E0E1E, #000041)',
+          }}
+        >
           <div tw="flex items-center">
-            {/* <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M4 11a9 9 0 0 1 9 9" />
-              <path d="M4 4a16 16 0 0 1 16 16" />
-              <circle cx="5" cy="19" r="1" />
-            </svg> */}
             <svg
-              width="141"
-              height="19"
+              width="195"
+              height="30"
               viewBox="0 0 141 19"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -99,10 +89,10 @@ export async function GET(req: NextRequest) {
             {/* <p tw="ml-2 font-bold text-2xl">Libertum</p> */}
           </div>
           <div tw="flex flex-col flex-1 py-10">
-            <div tw="flex text-xl uppercase font-bold tracking-tight font-normal">
+            {/* <div tw="flex text-4xl uppercase font-bold tracking-tight font-normal">
               BLOG POST
-            </div>
-            <div tw="flex text-[80px] font-bold text-[50px]">{heading}</div>
+            </div> */}
+            <div tw="flex text-7xl font-bold">{heading}</div>
           </div>
           <div tw="flex items-center w-full justify-between">
             <div tw="flex text-xl">{siteConfig.url}</div>
