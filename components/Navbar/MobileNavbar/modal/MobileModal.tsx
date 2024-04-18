@@ -12,8 +12,8 @@ export function MobileModal({
   return (
     <div className={css.mobileModalContainer} onClick={handleToggleOpenMenu}>
       <div className={css.mobileModal}>
-        <Link href="libertum.io/ico" className={css.border}>
-          Buy LBM
+        <Link href="libertum.io/get" className={css.border}>
+          Get LBM
         </Link>
         <Link href="https://www.libertum.io/comingsoon" className={css.border}>
           Explore Properties
