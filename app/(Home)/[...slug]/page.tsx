@@ -106,7 +106,7 @@ export default async function PostPage({ params }: PostPageProps) {
           width={300}
           height={150}
           alt={post.title}
-          className="w-3/4 mx-auto"
+          className="m-auto py-12"
         />
         <MDXContent code={post.body} />
       </div>

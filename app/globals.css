@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 
+p {
+font-size: 1.25rem;
+}
+
 @font-face {
   font-family: "Space Grotesk";
   src: url("../public/Space_Grotesk/SpaceGrotesk-VariableFont_wght.ttf");
