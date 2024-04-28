@@ -25,7 +25,7 @@ export function PostItem({
   return (
     <article className="bg-white h-full rounded-[5px] shadow border border-black border-opacity-10 flex flex-col items-stretch justify-between space-y-2">
       <div className="p-0 relative">
-        <Link href="#">
+        <Link href={"/" + slug}>
           {cover && (
             <Image
               src={cover}

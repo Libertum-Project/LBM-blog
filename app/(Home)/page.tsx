@@ -1,16 +1,16 @@
 import { posts } from '#site/content';
 import { PostItem } from '@/components/post-item';
-import { slug } from 'github-slugger';
-import { getAllTags, sortPosts, sortTagsByCount } from '@/lib/utils';
+//import { slug } from 'github-slugger';
+import { sortPosts } from '@/lib/utils';
 import Hero from './hero/Hero';
-import { Tag } from '@/components/tag';
+//import { Tag } from '@/components/tag';
 
 const Home = () => {
   const sortedPosts = sortPosts(posts.filter((post) => post.published));
   const displayPosts = sortedPosts;
 
-  const tags = getAllTags(posts);
-  const sortedTags = sortTagsByCount(tags);
+  //  const tags = getAllTags(posts);
+  //  const sortedTags = sortTagsByCount(tags);
 
   return (
     <>
