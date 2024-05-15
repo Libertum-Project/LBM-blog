@@ -8,6 +8,7 @@ export default {
     return config;
   },
   output: 'export',
+  images: { unoptimized: true },
 };
 
 class VeliteWebpackPlugin {
