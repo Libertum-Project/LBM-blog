@@ -9,7 +9,7 @@ font-size: 1.25rem;
 
 @font-face {
   font-family: "Space Grotesk";
-  src: url("../public/Space_Grotesk/SpaceGrotesk-VariableFont_wght.ttf");
+  src: url("../public/Space_Grotesk/SpaceGrotesk-VariableFont_wght.ttf") format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
