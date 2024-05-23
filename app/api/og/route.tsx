@@ -30,14 +30,17 @@ export async function GET(req: NextRequest) {
         >
           <div tw="flex flex-col flex-1 py-10">
             <div
-              tw="flex text-7xl font-bold"
-              style={{ fontFamily: 'Space Grotesk' }}
+              tw="flex text-7xl font-bold capitalize"
+              style={{ fontFamily: 'Space Grotesk', fontWeight: 600 }}
             >
               {heading}
             </div>
           </div>
           <div tw="flex items-center w-full justify-center">
-            <div tw="flex ml-2 border border-orange-200 px-6 py-3 rounded-3xl bg-[#FFA24E] shadow-2xl uppercase">
+            <div 
+            tw="flex ml-2 border border-orange-200 px-6 py-3 rounded-3xl bg-[#FFA24E] shadow-2xl uppercase" 
+            style={{boxShadow: "0px 0px 4px 0px #FFF, 0px 0px 20px 0px #FFA143", fontFamily: 'Space Grotesk', fontWeight: 600}}
+            >
               {siteConfig.links.site}
             </div>
           </div>
@@ -45,7 +48,7 @@ export async function GET(req: NextRequest) {
       ),
       {
         width: 1200,
-        height: 540
+        height: 540,
       }
     );
   } catch (error) {
