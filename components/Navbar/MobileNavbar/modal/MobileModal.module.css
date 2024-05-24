@@ -1,7 +1,7 @@
 .mobileModalContainer {
   margin: 0 auto;
   position: absolute;
-  top: 89.7px;
+  top: 80px;
   right: 0;
   left: 0;
   z-index: 99999;
@@ -18,12 +18,13 @@
   width: 100%;
   height: 100%;
   padding: 1rem 0;
+  overflow-y: scroll;
 }
 
 .mobileModal a,
 .mobileModal p {
   color: #fff;
-  font-family: "Space Grotesk";
+  font-family: 'Space Grotesk';
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
