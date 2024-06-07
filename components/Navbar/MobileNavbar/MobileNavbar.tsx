@@ -1,27 +1,29 @@
-"use client";
-import { type ReactElement } from "react";
-import { useState } from "react";
-import css from "./MobileNavbar.module.css";
-import Image from "next/image";
-import Link from "next/link";
+'use client';
+import { type ReactElement } from 'react';
+import { useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+
 import logo from '../../../public/horizontal-logo.svg';
-import menuBtn from "./menu.svg";
-import close from "./close.svg";
-import { MobileModal } from "./modal/MobileModal";
+
+import css from './MobileNavbar.module.css';
+import menuBtn from './menu.svg';
+import close from './close.svg';
+import { MobileModal } from './modal/MobileModal';
 
 export function MobileNavbar(): ReactElement {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleToggleOpenMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-    const bodyElement = document.getElementById("body");
+    const bodyElement = document.getElementById('body');
     if (bodyElement) {
       const allowScroll = window.innerHeight < 700;
       bodyElement.style.overflow = isMenuOpen
-        ? "auto"
+        ? 'auto'
         : allowScroll
-          ? "auto"
-          : "hidden";
+          ? 'auto'
+          : 'hidden';
     }
   };
 
@@ -30,7 +32,7 @@ export function MobileNavbar(): ReactElement {
       <nav className={css.mobileNavBarContainer}>
         <div className={css.mobileNavBar}>
           <Link
-            href={"./"}
+            href={'./'}
             onClick={isMenuOpen ? handleToggleOpenMenu : undefined}
           >
             <Image src={logo} alt="libertum logo" width="140.727" height="18" />

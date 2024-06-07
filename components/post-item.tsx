@@ -1,9 +1,11 @@
 import { Calendar } from 'lucide-react';
 import Link from 'next/link';
-import { buttonVariants } from './ui/button';
-import { cn, formatDate } from '@/lib/utils';
-import { Tag } from './tag';
 import Image from 'next/image';
+
+import { cn, formatDate } from '@/lib/utils';
+
+import { buttonVariants } from './ui/button';
+import { Tag } from './tag';
 
 interface PostItemProps {
   slug: string;
@@ -20,12 +22,12 @@ export function PostItem({
   description,
   date,
   tags,
-  cover,
+  cover
 }: PostItemProps) {
   return (
     <article className="bg-white h-full rounded-[5px] shadow border border-black border-opacity-10 flex flex-col items-stretch justify-between space-y-2">
       <div className="p-0 relative">
-        <Link href={"/" + slug}>
+        <Link href={'/' + slug}>
           {cover && (
             <Image
               src={cover}
@@ -44,10 +46,8 @@ export function PostItem({
               <Link href={'/' + slug}>{title}</Link>
             </h2>
             <div className="text-white text-sm  hover:text-blue-900 transition duration-500 ease-in-out">
-          {tags?.map((tag, index) => (           
-            <Tag tag={tag} key={tag} />
-          ))}
-        </div>
+              {tags?.map((tag, index) => <Tag tag={tag} key={tag} />)}
+            </div>
           </div>
         </div>
         <div className="block font-sans text-base font-light leading-relaxed text-inherit antialiased overflow-hidden whitespace-nowrap overflow-ellipsis">
@@ -63,7 +63,7 @@ export function PostItem({
           </dl>
         </div>
         <Link
-          href={"/" + slug}
+          href={'/' + slug}
           className="flex items-center justify-center w-full rounded-[5px] border border-teal-500 border-opacity-20  text-center font-semibold font-space_grotesk py-3 hover:bg-teal-500 hover:text-white bg-[#00062F] text-white space-x-4"
         >
           <p>Read more</p>

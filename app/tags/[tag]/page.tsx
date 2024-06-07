@@ -1,11 +1,12 @@
+import { slug } from 'github-slugger';
+import { Metadata } from 'next';
+import Link from 'next/link';
+
 import { posts } from '#site/content';
 import { PostItem } from '@/components/post-item';
 import { Tag } from '@/components/tag';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { getAllTags, getPostsByTagSlug, sortTagsByCount } from '@/lib/utils';
-import { slug } from 'github-slugger';
-import { Metadata } from 'next';
-import Link from 'next/link';
 
 interface TagPageProps {
   params: {
@@ -14,12 +15,12 @@ interface TagPageProps {
 }
 
 export async function generateMetadata({
-  params,
+  params
 }: TagPageProps): Promise<Metadata> {
   const { tag } = params;
   return {
     title: tag,
-    description: `Posts on the topic of ${tag}`,
+    description: `Posts on the topic of ${tag}`
   };
 }
 
@@ -51,15 +52,15 @@ export default function TagPage({ params }: TagPageProps) {
         </div>
       </div>
       <div className="flex flex-wrap gap-2">
-      <Link
+        <Link
           href="/tags"
           className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 m-[.8px] border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 no-underline p-4 text-white bg-teal-500 border-teal-500 hover:text-teal-500 font-space_grotesk hover:scale-105 uppercase max-h-6"
         >
-          <p className="font-space_grotesk text-xs font-semibold hover:scale-105 uppercase">            
+          <p className="font-space_grotesk text-xs font-semibold hover:scale-105 uppercase">
             All
           </p>
         </Link>
-        {sortedTags?.map((tag) => (
+        {sortedTags.map((tag) => (
           <Tag tag={tag} count={tags[tag]} key={tag} />
         ))}
       </div>
@@ -68,7 +69,7 @@ export default function TagPage({ params }: TagPageProps) {
       <div className="grid grid-cols-1 md:col-3 gap-3 mt-8">
         <div className="col-span-12 col-start-1 sm:col-span-8">
           <div>
-            {displayPosts?.length > 0 ? (
+            {displayPosts.length > 0 ? (
               <ul className="grid grid-cols-1 md:grid-cols-3">
                 {displayPosts.map((post) => {
                   const { slug, date, title, description, cover, tags } = post;

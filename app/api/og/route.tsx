@@ -1,5 +1,6 @@
 import { NextRequest } from 'next/server';
 import { ImageResponse } from 'next/server';
+
 import { siteConfig } from '@/config/site';
 
 export const runtime = 'edge';
@@ -37,9 +38,13 @@ export async function GET(req: NextRequest) {
             </div>
           </div>
           <div tw="flex items-center w-full justify-center">
-            <div 
-            tw="flex ml-2 border border-orange-200 px-6 py-3 rounded-3xl bg-[#FFA24E] shadow-2xl uppercase" 
-            style={{boxShadow: "0px 0px 4px 0px #FFF, 0px 0px 20px 0px #FFA143", fontFamily: 'Space Grotesk', fontWeight: 600}}
+            <div
+              tw="flex ml-2 border border-orange-200 px-6 py-3 rounded-3xl bg-[#FFA24E] shadow-2xl uppercase"
+              style={{
+                boxShadow: '0px 0px 4px 0px #FFF, 0px 0px 20px 0px #FFA143',
+                fontFamily: 'Space Grotesk',
+                fontWeight: 600
+              }}
             >
               {siteConfig.links.site}
             </div>
@@ -48,7 +53,7 @@ export async function GET(req: NextRequest) {
       ),
       {
         width: 1200,
-        height: 540,
+        height: 540
       }
     );
   } catch (error) {

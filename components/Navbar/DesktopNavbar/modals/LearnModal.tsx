@@ -1,16 +1,19 @@
-import { type ReactElement } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import css from "./Modal.module.css";
-import investor from "./investors.svg";
-import propertyOwner from "./propertyOwner.svg";
-import tokenization from "./tokenization.svg";
+import { type ReactElement } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+
+import css from './Modal.module.css';
+import investor from './investors.svg';
+import propertyOwner from './propertyOwner.svg';
+import tokenization from './tokenization.svg';
 
 interface LearnModalProps {
   handleHideModals: () => void;
 }
 
-export function LearnModal({ handleHideModals }: LearnModalProps): ReactElement {
+export function LearnModal({
+  handleHideModals
+}: LearnModalProps): ReactElement {
   return (
     <div
       className={css.navModalContainer}

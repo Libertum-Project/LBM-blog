@@ -1,5 +1,6 @@
-import { getAllTags, sortTagsByCount } from '@/lib/utils';
 import { Metadata } from 'next';
+
+import { getAllTags, sortTagsByCount } from '@/lib/utils';
 import { posts } from '#site/content';
 import { Tag } from '@/components/tag';
 import { sortPosts } from '@/lib/utils';
@@ -7,7 +8,7 @@ import { PostItem } from '@/components/post-item';
 
 export const metadata: Metadata = {
   title: 'Tags',
-  description: "Topic I've written about",
+  description: "Topic I've written about"
 };
 
 export default async function TagsPage() {
@@ -31,14 +32,14 @@ export default async function TagsPage() {
       </div>
 
       <div className="flex flex-wrap gap-2">
-        {sortedTags?.map((tag) => (
+        {sortedTags.map((tag) => (
           <Tag tag={tag} count={tags[tag]} key={tag} />
         ))}
       </div>
       <hr className="my-4" />
 
       <div>
-        {displayPosts?.length > 0 ? (
+        {displayPosts.length > 0 ? (
           <ul className="grid grid-cols-1 md:grid-cols-3">
             {displayPosts.map((post) => {
               const { slug, date, title, description, cover, tags } = post;

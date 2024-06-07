@@ -15,7 +15,7 @@ function Share({ title, url }: ShareProps) {
         url
       )}&title=${encodeURIComponent(title)}`,
       icon: <Linkedin />,
-      label: 'Linkedin',
+      label: 'Linkedin'
     },
     // {
     //   href: `https://discord.com/api/oauth2/authorize?client_id=YOUR_CLIENT_ID&scope=bot&permissions=0`,
@@ -27,20 +27,20 @@ function Share({ title, url }: ShareProps) {
         url
       )}&text=${encodeURIComponent(title)}`,
       icon: <Telegram />,
-      label: 'Telegram',
+      label: 'Telegram'
     },
     {
       href: `https://twitter.com/intent/tweet?url=${encodeURIComponent(
         url
       )}&text=${encodeURIComponent(description)}`,
       icon: <Twitter />,
-      label: 'Twitter',
+      label: 'Twitter'
     },
     {
       href: `https://www.facebook.com/sharer/sharer.php?u=${url}`,
       icon: <Facebook />,
-      label: 'Facebook',
-    },
+      label: 'Facebook'
+    }
     // {
     //   href: "https://www.instagram.com/libertum.io/",
     //   icon: <Instagram />,

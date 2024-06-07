@@ -8,7 +8,28 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "lint:errors": "next lint --quiet",
+    "prepare": "npx husky install",
+    "type-check": "tsc --pretty --noEmit",
     "preinstall": "npx only-allow pnpm"
+  },
+  "lint-staged": {
+    "!(*config).{js,jsx,ts,tsx}": [
+      "eslint --fix"
+    ],
+    "src/**/*.{ts,tsx}": [
+      "bash -c 'npm run type-check'"
+    ],
+    "*.json": [
+      "prettier --write"
+    ],
+    "*.{css,pcss,scss}": [
+      "prettier --write"
+    ]
+  },
+  "engines": {
+    "node": ">=20.0.0"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.0.4",
@@ -27,13 +48,19 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@commitlint/config-conventional": "^19.2.2",
     "@tailwindcss/typography": "^0.5.10",
     "@types/node": "^20.11.30",
     "@types/react": "^18.2.67",
     "@types/react-dom": "^18",
+    "@typescript-eslint/eslint-plugin": "^7.12.0",
+    "@typescript-eslint/parser": "^7.12.0",
     "autoprefixer": "^10.4.18",
     "eslint": "^8",
-    "eslint-config-next": "^14.1.1",
+    "eslint-config-next": "^14.2.3",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "husky": "^9.0.11",
     "postcss": "^8.4.35",
     "postcss-load-config": "^5.1.0",
     "rehype-autolink-headings": "^7.1.0",
