@@ -1,18 +1,17 @@
-import { type ReactElement } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import css from "./Modal.module.css";
-import tokenUtility from "./tokenUtility.svg";
-import whitePaper from "./whitePaper.svg";
-import pitchDeck from "./pitchDeck.svg";
+import { type ReactElement } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+
+import css from './Modal.module.css';
+import tokenUtility from './tokenUtility.svg';
+import whitePaper from './whitePaper.svg';
+import pitchDeck from './pitchDeck.svg';
 
 interface DocsModalProps {
   handleHideModals: () => void;
 }
 
-export function DocsModal({
-  handleHideModals,
-}: DocsModalProps): ReactElement {
+export function DocsModal({ handleHideModals }: DocsModalProps): ReactElement {
   return (
     <div
       className={css.navModalContainer}
@@ -38,7 +37,10 @@ export function DocsModal({
         </div>
         <div className={css.modalLinks}>
           <div>
-            <Link href= "https://www.libertum.io/Libertum_Tokenomics.pdf" target="_blank">
+            <Link
+              href="https://www.libertum.io/Libertum_Tokenomics.pdf"
+              target="_blank"
+            >
               <Image
                 src={tokenUtility}
                 alt="Investors"
@@ -49,7 +51,10 @@ export function DocsModal({
             </Link>
           </div>
           <div>
-            <Link href= "https://www.libertum.io/whitepaperLibertum.pdf" target="_blank">            
+            <Link
+              href="https://www.libertum.io/whitepaperLibertum.pdf"
+              target="_blank"
+            >
               <Image
                 src={whitePaper}
                 alt="Property Owner"
@@ -60,7 +65,10 @@ export function DocsModal({
             </Link>
           </div>
           <div>
-            <Link href= "https://www.libertum.io/Libertum_Pitch.pdf" target="_blank">
+            <Link
+              href="https://www.libertum.io/Libertum_Pitch.pdf"
+              target="_blank"
+            >
               <Image src={pitchDeck} alt="Token" width={20} height={20} />
               Pitch Deck
             </Link>
@@ -69,4 +77,4 @@ export function DocsModal({
       </div>
     </div>
   );
-};
+}

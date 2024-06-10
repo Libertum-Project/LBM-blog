@@ -1,6 +1,7 @@
-import { ReactElement } from "react";
-import { MobileNavbar } from "./MobileNavbar/MobileNavbar";
-import { DesktopNavbar } from "./DesktopNavbar/DesktopNavbar";
+import { ReactElement } from 'react';
+
+import { MobileNavbar } from './MobileNavbar/MobileNavbar';
+import { DesktopNavbar } from './DesktopNavbar/DesktopNavbar';
 
 const NavBar = (): ReactElement => {
   return (
@@ -11,4 +12,4 @@ const NavBar = (): ReactElement => {
   );
 };
 
-export default NavBar; 
+export default NavBar;

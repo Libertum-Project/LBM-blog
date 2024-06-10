@@ -1,5 +1,6 @@
 import { PropsWithChildren } from 'react';
 import { Montserrat } from 'next/font/google';
+
 import './globals.css';
 const montserrat = Montserrat({ subsets: ['latin'] });
 import { siteConfig } from '@/config/site';

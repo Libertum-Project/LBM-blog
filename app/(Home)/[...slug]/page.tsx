@@ -1,10 +1,13 @@
+import { notFound } from 'next/navigation';
+import Image from 'next/image';
+
 import { posts } from '#site/content';
 import { MDXContent } from '@/components/ui/mdx-components';
-import { notFound } from 'next/navigation';
 import Share from '@/components/Share';
-import Image from 'next/image';
+
 import '@/styles/mdx.css';
 import { Metadata } from 'next';
+
 // import { siteConfig } from "@/config/site";
 import { Tag } from '@/components/tag';
 interface PostPageProps {
@@ -14,14 +17,14 @@ interface PostPageProps {
 }
 
 async function getPostFromParams(params: PostPageProps['params']) {
-  const slug = params?.slug?.join('/');
+  const slug = params.slug.join('/');
   const post = posts.find((post) => post.slugAsParams === slug);
 
   return post;
 }
 
 export async function generateMetadata({
-  params,
+  params
 }: PostPageProps): Promise<Metadata> {
   const post = await getPostFromParams(params);
 
@@ -46,17 +49,17 @@ export async function generateMetadata({
           url: `/api/og?${ogSearchParams.toString()}`,
           width: 1200,
           height: 630,
-          alt: post.title,
-        },
-      ],
+          alt: post.title
+        }
+      ]
     },
     twitter: {
       card: 'summary_large_image',
       creator: 'libertum',
       title: post.title,
       description: post.description,
-      images: [`/api/og?${ogSearchParams.toString()}`],
-    },
+      images: [`/api/og?${ogSearchParams.toString()}`]
+    }
   };
 }
 
@@ -90,9 +93,7 @@ export default async function PostPage({ params }: PostPageProps) {
           </p>
         ) : null}
         <div className="flex flex-wrap gap-2 mb-4">
-          {post.tags?.map((tag) => (
-            <Tag tag={tag} key={tag} />
-          ))}
+          {post.tags?.map((tag) => <Tag tag={tag} key={tag} />)}
         </div>
         <Share
           title={post.title}

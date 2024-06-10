@@ -3,8 +3,10 @@ import { type ReactElement } from 'react';
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import css from './DesktopNavbar.module.css';
+
 import logo from '../../../public/horizontal-logo.svg';
+
+import css from './DesktopNavbar.module.css';
 import { LearnModal } from './modals/LearnModal';
 import { DocsModal } from './modals/DocsModal';
 
@@ -81,7 +83,6 @@ export function DesktopNavbar(): ReactElement {
           >
             Docs ↓
           </a>
-
         </div>
       </nav>
       {isLearnModalVisible && (
