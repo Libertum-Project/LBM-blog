@@ -26,7 +26,7 @@ export const PaginationComponent = ({
   const prevPage = currentPage - 1;
   const nextPage = currentPage + 1;
 
-  const createPageURL = (pageNumber: number | string) => {
+  const createPageURL = (pageNumber: number) => {
     const params = new URLSearchParams(searchParams);
     params.set('page', pageNumber.toString());
     return `${pathName}?${params.toString()}`;
