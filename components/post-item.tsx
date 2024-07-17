@@ -6,7 +6,6 @@ import { cn, formatDate } from '@/lib/utils';
 
 import { buttonVariants } from './ui/button';
 import { Tag } from './tag';
-
 interface PostItemProps {
   slug: string;
   title: string;
@@ -15,7 +14,6 @@ interface PostItemProps {
   tags?: Array<string>;
   cover?: any;
 }
-
 export function PostItem({
   slug,
   title,
@@ -38,7 +36,6 @@ export function PostItem({
           )}
         </Link>
       </div>
-
       <div className="py-6 px-4 space-y-2 font-space_grotesk">
         <div className="flex justify-between">
           <div className="flex flex-col">
@@ -46,7 +43,7 @@ export function PostItem({
               <Link href={'/' + slug}>{title}</Link>
             </h2>
             <div className="text-white text-sm  hover:text-blue-900 transition duration-500 ease-in-out">
-              {tags?.map((tag, index) => <Tag tag={tag} key={tag} />)}
+              {tags?.map((tag) => <Tag tag={tag} key={tag} />)}
             </div>
           </div>
         </div>
@@ -58,7 +55,9 @@ export function PostItem({
             <dt className="sr-only">Published On</dt>
             <dd className="text-sm sm:text-base font-medium flex items-center gap-1">
               <Calendar className="h-4 w-4" />
-              <time dateTime={date}>{formatDate(date)}</time>
+              <time dateTime={date} className="font-bold">
+                {formatDate(date)}
+              </time>
             </dd>
           </dl>
         </div>
