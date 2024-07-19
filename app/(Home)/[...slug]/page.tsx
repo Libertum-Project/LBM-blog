@@ -104,10 +104,10 @@ export default async function PostPage({ params }: PostPageProps) {
       <div className="md:px-[3rem]">
         <Image
           src={post.cover}
-          width={300}
-          height={150}
+          width={1200}
+          height={500}
           alt={post.title}
-          className="m-auto py-12"
+          className="m-auto py-12 lg:w-[50rem] lg:h-auto"
         />
         <MDXContent code={post.body} />
       </div>
